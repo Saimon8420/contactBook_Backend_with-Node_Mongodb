@@ -1,7 +1,7 @@
 # Project_Name: Contact Book. Visit # https://amazing-llama-99e7de.netlify.app
 
 ## Description:
-This is a contact book, where user can add personal contact, can delete, update and remove existing contacts.For all these operation first user have to login, if he/she is an authorized user, else he/she have create personal account.
+This project is contact book, where user can add personal contact, can also delete, update and remove existing contacts. For all these operation first user have to login. If he/she is an authorized user, he/she can login into system, else he/she have to create personal account.
 
 ### Features:
 * Tokenized authentication system. So, after login user doesn't need to login again. It will valid until expired token or user logout from system by his/her own action.
