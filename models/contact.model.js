@@ -1,6 +1,6 @@
 const Joi = require('joi');
 const mongoose = require('mongoose');
-
+const myCustomJoi = Joi.extend(require('joi-phone-number'));
 // Create contact schema
 const contactSchema = new mongoose.Schema({
     name: {
@@ -32,7 +32,10 @@ const validateContact = (data) => {
         name: Joi.string().min(4).max(25).required(),
         email: Joi.string().email().required(),
         address: Joi.string().min(5).max(40).required(),
-        phone: Joi.string().length(11).pattern(/^[0-9]+$/).required(),
+        phone: myCustomJoi.string().phoneNumber({
+            format: "international",
+            strict: true,
+        }).required(),
     })
     return schema.validate(data);
 }
