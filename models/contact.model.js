@@ -32,7 +32,7 @@ const validateContact = (data) => {
         name: Joi.string().min(4).max(25).required(),
         email: Joi.string().email().required(),
         address: Joi.string().min(5).max(40).required(),
-        phone: Joi.string().regex(/^[0-9]{11}$/).required(),
+        phone: Joi.string().length(11).regex(/^\d+$/),
     })
     return schema.validate(data);
 }
