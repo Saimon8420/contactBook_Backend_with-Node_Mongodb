@@ -9,7 +9,6 @@ const saltRounds = 10;
 
 // Login user and generate json web token via(jwt)
 userRouter.post("/login", async (req, res) => {
-    console.log(req.body);
     const { email, password } = req.body;
     if (!email || !password) return res.status(400).json({ error: "Please enter all the require field" });
 
@@ -99,7 +98,6 @@ userRouter.post("/update/pass", async (req, res) => {
             })
         }
     } catch (error) {
-        console.log(error.message);
         res.status(500).json({
             message: "There was a server side error"
         })

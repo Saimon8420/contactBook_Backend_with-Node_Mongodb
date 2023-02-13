@@ -5,7 +5,7 @@ This is a contact book, where user can add personal contact, can delete, update 
 ### Features:
 * Tokenized authentication system. So, after login user doesn't need to login again. It will valid until expired token or user logout from system by his/her own action.
 * Highly protected password system. So, doesn't any worries for leaking password.
-* Each user will get has his/her own saved contact. No ways to get others contact.
+* Each user will get his/her own saved contact. No ways to get others contact.
 
 #### Technologies & Packages:
 This system build with nodejs and used mongoDB as database.

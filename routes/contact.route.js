@@ -12,7 +12,9 @@ contactRouter.get("/allcontacts", auth, async (req, res) => {
 
         return res.status(200).json({ contacts: allContacts });
     } catch (error) {
-        console.log(error);
+        res.status(500).json({
+            message: "There was a server side Error!"
+        });
     }
 })
 
@@ -55,7 +57,6 @@ contactRouter.post('/contact', auth, async (req, res) => {
 // Update contact
 contactRouter.put('/contact/:id', async (req, res) => {
     const { error } = validateContact(req.body);
-    console.log(req.body);
     if (error) {
         return res.status(400).json({ error: error.details[0].message });
     }
@@ -83,7 +84,6 @@ contactRouter.put('/contact/:id', async (req, res) => {
             });
         }
     } catch (error) {
-        console.log(error.message);
         res.status(500).json({
             message: "There is a server side error!"
         })
@@ -122,7 +122,6 @@ contactRouter.delete('/contact/:id', async (req, res) => {
             });
         }
     } catch (error) {
-        console.log(error.message);
         res.status(500).json({
             message: "There is a server side error!"
         })
